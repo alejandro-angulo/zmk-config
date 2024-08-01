@@ -42,5 +42,9 @@
     devShells = forAllSystems (system: {
       default = zmk-nix.devShells.${system}.default;
     });
+
+    hydraJobs = {
+      packages = self.packages.x86_64-linux;
+    };
   };
 }
